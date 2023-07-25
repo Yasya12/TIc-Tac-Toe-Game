@@ -44,5 +44,119 @@ namespace TIc_Tac_Toe_Game.GameLogic
             return !gameOver && gameGrid[r, c] == Player.None;
         }
 
+        private bool IsGridFull()
+        {
+            return turnCheck == 9;
+        }
+
+        private void SwitchPlayer()
+        {
+            /*if (currentPlayer == Player.X)
+            {
+                currentPlayer = Player.O;
+            }
+            else
+            {
+                currentPlayer = Player.X;
+            }*/
+
+            currentPlayer = currentPlayer == Player.X ? Player.O : Player.X;
+        }
+
+        private bool AreSquaresMarked((int, int)[] squares, Player player)
+        {
+            foreach ((int r, int c) in squares) 
+            {
+                if (gameGrid[r, c] != player)
+                {
+                    return false;
+                } 
+            }
+
+            return true;
+        }
+
+        private bool DidMoveWin(int r, int c, out WinInfo winInfo)
+        {
+            (int, int)[] row = new[] { (r, 0), (r, 1), (r, 2) };
+            (int, int)[] col = new[] { (0, c), (1, c), (2, c) };
+            (int, int)[] mainDiag = new[] { (0, 0), (1, 1), (2, 2) };
+            (int, int)[] antiDiag = new[] { (0, 2), (1, 1), (2, 0) };
+
+            if (AreSquaresMarked(row, currentPlayer))
+            {
+                winInfo = new WinInfo { type = WinType.Row, number = r };
+                return true;
+            }
+            else if (AreSquaresMarked(col, currentPlayer))
+            {
+                winInfo = new WinInfo { type = WinType.Column, number = c };
+                return true;
+            }
+            else if (AreSquaresMarked(mainDiag, currentPlayer))
+            {
+                winInfo = new WinInfo { type = WinType.MainDiagonal};
+                return true;
+            }
+            else if (AreSquaresMarked(antiDiag, currentPlayer))
+            {
+                winInfo = new WinInfo { type = WinType.AntiDIagonal };
+                return true;
+            }
+
+            winInfo = null;
+            return false;
+        }
+
+        private bool DidMoveEndGame(int r, int c, out GameResult gameResult)
+        {
+            if (DidMoveWin(r, c, out WinInfo winInfo))
+            {
+                gameResult = new GameResult { winner = currentPlayer, winInfo = winInfo };
+                return true;
+            }
+
+            if (IsGridFull())
+            {
+                gameResult = new GameResult { winner = Player.None };
+                return true;
+            }
+
+            gameResult = null;
+            return false;
+        }
+
+        //тепер "збираємо" всі наші хелперс методи до купи, щоб зробитит рух
+        public void MakeMove(int r, int c)
+        {
+            if (!PlayerCanMakeMove(r, c))
+            {
+                return;
+            }
+
+            gameGrid[r, c] = currentPlayer;
+            turnCheck++;
+
+            if(DidMoveEndGame(r, c, out GameResult gameResult))
+            {
+                gameOver = true;
+                OnMoveMade?.Invoke(r, c);
+                OnGameOver?.Invoke(gameResult);
+            }
+            else
+            {
+                SwitchPlayer();
+                OnMoveMade?.Invoke(r, c);
+            }
+        }
+
+        public void Reset()
+        {
+            gameGrid = new Player[3, 3];
+            currentPlayer = Player.O;
+            turnCheck = 0;
+            gameOver = false;
+            OnNewGame?.Invoke();
+        }
     }
 }

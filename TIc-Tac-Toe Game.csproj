@@ -8,4 +8,82 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Pictures\Grid - Copy.png" />
+    <None Remove="Pictures\Grid.png" />
+    <None Remove="Pictures\Icon.ico" />
+    <None Remove="Pictures\O0.png" />
+    <None Remove="Pictures\O1.png" />
+    <None Remove="Pictures\O10.png" />
+    <None Remove="Pictures\O11.png" />
+    <None Remove="Pictures\O12.png" />
+    <None Remove="Pictures\O13.png" />
+    <None Remove="Pictures\O14.png" />
+    <None Remove="Pictures\O15.png" />
+    <None Remove="Pictures\O2.png" />
+    <None Remove="Pictures\O3.png" />
+    <None Remove="Pictures\O4.png" />
+    <None Remove="Pictures\O5.png" />
+    <None Remove="Pictures\O6.png" />
+    <None Remove="Pictures\O7.png" />
+    <None Remove="Pictures\O8.png" />
+    <None Remove="Pictures\O9.png" />
+    <None Remove="Pictures\X0.png" />
+    <None Remove="Pictures\X1.png" />
+    <None Remove="Pictures\X10.png" />
+    <None Remove="Pictures\X11.png" />
+    <None Remove="Pictures\X12.png" />
+    <None Remove="Pictures\X13.png" />
+    <None Remove="Pictures\X14.png" />
+    <None Remove="Pictures\X15.png" />
+    <None Remove="Pictures\X2.png" />
+    <None Remove="Pictures\X3.png" />
+    <None Remove="Pictures\X4.png" />
+    <None Remove="Pictures\X5.png" />
+    <None Remove="Pictures\X6.png" />
+    <None Remove="Pictures\X7.png" />
+    <None Remove="Pictures\X8.png" />
+    <None Remove="Pictures\X9 - Copy.png" />
+    <None Remove="Pictures\X9.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Pictures\Grid - Copy.png" />
+    <Resource Include="Pictures\Grid.png" />
+    <Resource Include="Pictures\Icon.ico" />
+    <Resource Include="Pictures\O0.png" />
+    <Resource Include="Pictures\O1.png" />
+    <Resource Include="Pictures\O10.png" />
+    <Resource Include="Pictures\O11.png" />
+    <Resource Include="Pictures\O12.png" />
+    <Resource Include="Pictures\O13.png" />
+    <Resource Include="Pictures\O14.png" />
+    <Resource Include="Pictures\O15.png" />
+    <Resource Include="Pictures\O2.png" />
+    <Resource Include="Pictures\O3.png" />
+    <Resource Include="Pictures\O4.png" />
+    <Resource Include="Pictures\O5.png" />
+    <Resource Include="Pictures\O6.png" />
+    <Resource Include="Pictures\O7.png" />
+    <Resource Include="Pictures\O8.png" />
+    <Resource Include="Pictures\O9.png" />
+    <Resource Include="Pictures\X0.png" />
+    <Resource Include="Pictures\X1.png" />
+    <Resource Include="Pictures\X10.png" />
+    <Resource Include="Pictures\X11.png" />
+    <Resource Include="Pictures\X12.png" />
+    <Resource Include="Pictures\X13.png" />
+    <Resource Include="Pictures\X14.png" />
+    <Resource Include="Pictures\X15.png" />
+    <Resource Include="Pictures\X2.png" />
+    <Resource Include="Pictures\X3.png" />
+    <Resource Include="Pictures\X4.png" />
+    <Resource Include="Pictures\X5.png" />
+    <Resource Include="Pictures\X6.png" />
+    <Resource Include="Pictures\X7.png" />
+    <Resource Include="Pictures\X8.png" />
+    <Resource Include="Pictures\X9 - Copy.png" />
+    <Resource Include="Pictures\X9.png" />
+  </ItemGroup>
+
 </Project>

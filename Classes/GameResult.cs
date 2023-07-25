@@ -10,7 +10,7 @@ namespace TIc_Tac_Toe_Game.Classes
     //клас, який показує як закінчилася гра(який гравець виграв та як)
     public class GameResult
     {
-        public Player player { get; set; }
-        public WinType type { get; set; }
+        public Player winner { get; set; }
+        public WinInfo winInfo { get; set; }
     }
 }
